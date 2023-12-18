@@ -1,0 +1,16 @@
+Flask
+Flask-Session
+Flask-SQLAlchemy
+psycopg2-binary
+SQLAlchemy
+
+# sqlite:///happy_database.db
+# export DATABASE_URL="postgresql://localhost/users"
+
+# psql postgres
+# \c users
+# SELECT * FROM users;
+# \dt
+# background: #f1e9e3;
+
+# Database configuration

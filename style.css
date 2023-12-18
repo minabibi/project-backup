@@ -1,0 +1,162 @@
+body {
+    background-image: url('/static/background1.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Muse';
+    font-weight: 300;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.header {
+    font-family: 'Muse';
+    padding: 15px;
+    margin-bottom: 5px;
+    background-color: rgba(255, 255, 255, 0.739);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+}
+
+
+ul, .affirmations-section, .goals-section, .accomplished-goals-section, .accomplishment-feed-section {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 11pt;
+    color: #5f4f4f;
+}
+
+.header {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.affirmations-section, .accomplishment-feed-section, .goals-section, .accomplished-goals-section {
+    flex-basis: calc(33% - 20px);
+    height: auto;
+    text-align: center;
+    margin: 8px;
+    padding: 0 20px;
+    background-color: rgba(255, 255, 255, 0.886);
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.middle-sections {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-basis: calc(33% - 20px);
+    height: auto;
+}
+
+
+h1 {
+    font-size: 45px;
+    font-weight: 500;
+    color: #503531;
+    margin-bottom: 0;
+}
+
+h2, h4 {
+    font-family: 'Open Sans';
+    font-size: 18pt;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    border-bottom: none;
+}
+
+form {
+    margin: 5px 0;
+    text-align: center;
+}
+
+input[type="text"], input[type="submit"] {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
+input[type="submit"] {
+    background-color: #ccbaad;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"] {
+    background-color: #ccbaad;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #5e433e;
+}
+
+input[type="submit"]:hover {
+    background-color: #5e433e;
+}
+
+li {
+    background-color: rgba(244, 236, 236, 0.717);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.nav-item {
+    margin-inline: 2px;
+}
+
+li:hover {
+    background-color: rgba(195, 174, 159, 0.451);
+}
+ul {
+    list-style-type: none;
+    text-align: start;
+    padding: 0;
+}
+
+
+a {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color .2s;
+}
+
+.delete-accomplishment, .delete-btn, .shared-indicator, .delete-affirmation{
+    color: rgb(0, 0, 0);
+    margin-left: 10px;
+    cursor: pointer;
+    text-decoration: underline
+}
+
+.error-title, .error-message {
+    text-align: center;
+    margin-top: 20px;
+}

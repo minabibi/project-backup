@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    HAPPY SPACE
+{% endblock %}
+
+{% block main %}
+    <div class="header">
+        <h1> HAPPY SPACE</h1>
+        <h3>
+            {% if user.endswith('s') %}
+                {{ user }}' Personal Growth Path
+            {% else %}
+                {{ user }}'s Personal Growth Path
+            {% endif %}
+        </h3>
+    </div>
+    <div class="container">
+        <div class="affirmations-section">
+            <h2>Affirmations</h2>
+            <ul>
+                {% for affirmation in affirmations %}
+                    <li>{{ affirmation }}
+                        <a href="/delete_affirmation/{{ affirmation.id }}" class="delete-affirmation">Delete</a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <form method="post">
+                <input type="text" name="affirmation" placeholder="Add affirmation" />
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+
+        <div class="middle-sections">
+            <div class="accomplished-goals-section">
+                <h2>Accomplished Goals</h2>
+                <ul id="accomplished-goals">
+                    {% for goal in goals %}
+                        {% if goal.is_attained %}
+                            <li>
+                                <a href="/toggle_goal/{{ goal.id }}/false">{{ goal.text }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="goals-section">
+                <h2>Goals</h2>
+                <ul id="active-goals">
+                    {% for goal in goals %}
+                        {% if not goal.is_attained %}
+                            <li>
+                                <a href="/toggle_goal/{{ goal.id }}/true">{{ goal.text }}</a>
+                                <a href="/delete_goal/{{ goal.id }}" class="delete-btn">Delete</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <form method="post">
+                    <input type="text" name="goal" placeholder="Add goal" />
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
+        </div>
+
+        <div class="accomplishment-feed-section">
+            <h2>Accomplishment Feed</h2>
+            <ul>
+                {% for accomplishment in accomplishments %}
+                    <li>
+                        {{ accomplishment.user.username }}: {{ accomplishment.text }}
+                        {% if accomplishment.user_id == user_id %}
+                            <a href="/delete_accomplishment/{{ accomplishment.id }}" class="delete-accomplishment">Delete</a>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+            <form method="post" action="/add_accomplishment">
+                <input type="text" name="accomplishment" placeholder="Share your accomplishment" />
+                <input type="submit" value="Share" />
+            </form>
+        </div>
+    </div>
+{% endblock %}
